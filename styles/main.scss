@@ -1,0 +1,137 @@
+@import './variables/';
+@import './typography';
+@import './mixins';
+
+body {
+    max-width: 1900px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.header {
+    padding: 60px 8vw 0;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        background-image: url(/images/bg-header-desktop.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+    }
+    &__content {
+        @include center-center;
+    }
+}
+
+.snippets {
+    padding: 100px 8vw 0;
+    &__main {
+        @include center-center;
+        padding-bottom: 65px;
+    }
+    &__hero {
+        @include space;
+        img { margin-left: -20%; }    
+    }
+    .feature__container {
+        width: 40%;
+        margin: auto 0;
+        p {
+            position: relative;
+            top: -10px;
+        }
+    }
+}
+
+.access {
+    padding: 100px 8vw 0;
+    @include center-center;
+    &__main {
+        padding-bottom: 30px;
+    }
+}
+
+.supercharge {
+    text-align: center;
+    padding: 50px 8vw 0;
+    &__tools {
+        @include space;
+        padding-top: 70px;
+        .tool {
+            width: calc(95% / 3);
+            img { height: 35px; }
+        }
+    }
+}
+
+.partner__companies {
+    @include space;
+    padding: 110px 8vw;
+    align-items: center;
+}
+
+.cta {
+    @include center-center;
+    padding-bottom: 130px;
+}
+
+.footer {
+    background-color: hsla(201, 11%, 66%, 0.2);
+    padding: 0px 8vw;
+    @include space;
+
+    .resources {
+        display: flex;
+        img { 
+            max-height: 50px;
+            align-self: center;
+        }
+        li:hover { color: $cyan; }
+
+        ul li:nth-of-type(1) { margin-bottom: 12px; }
+    }
+
+    .socials {
+        width: 100px;
+        align-self: center;
+        @include space;
+        a {
+            &:nth-child(1) i:hover { color: #3b5998; }
+            &:nth-child(2) i:hover { color: #00acee; }
+            &:nth-child(3) i:hover {
+                background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+            }
+            i { font-size: 20px; }
+        }
+    }
+}
+
+
+.btn {
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    height: 40px;
+    padding: 0 20px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    &-ios { 
+        background-color: $cyan;
+        border-bottom: 2px solid hsl(171, 60%, 40%);
+        box-shadow: 0px 7px 10px hsla(171, 60%, 40%, 0.3); 
+        margin-right: 6px;
+    }
+    &-mac { 
+        background-color: $light-blue;
+        border-bottom: 2px solid hsl(233, 80%, 63%);
+        box-shadow: 0px 7px 10px hsla(233, 40%, 53%, 0.4);
+    }
+    &:hover { opacity: 0.85; }
+    &:focus { outline: 0; }
+    &:active { transform: scale(.985); }
+}

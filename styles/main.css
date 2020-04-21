@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css?family=Bai+Jamjuree:400,600&display=swap");
+html {
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #4c545d;
+  font-weight: 600;
+}
+
+p {
+  color: #9fabb2;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  font-family: inherit;
+}
+
+body {
+  max-width: 1900px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.header {
+  padding: 60px 8vw 0;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(/images/bg-header-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.header__content {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.snippets {
+  padding: 100px 8vw 0;
+}
+
+.snippets__main {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 65px;
+}
+
+.snippets__hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.snippets__hero img {
+  margin-left: -20%;
+}
+
+.snippets .feature__container {
+  width: 40%;
+  margin: auto 0;
+}
+
+.snippets .feature__container p {
+  position: relative;
+  top: -10px;
+}
+
+.access {
+  padding: 100px 8vw 0;
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.access__main {
+  padding-bottom: 30px;
+}
+
+.supercharge {
+  text-align: center;
+  padding: 50px 8vw 0;
+}
+
+.supercharge__tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 70px;
+}
+
+.supercharge__tools .tool {
+  width: calc(95% / 3);
+}
+
+.supercharge__tools .tool img {
+  height: 35px;
+}
+
+.partner__companies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 110px 8vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cta {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 130px;
+}
+
+.footer {
+  background-color: rgba(159, 171, 178, 0.2);
+  padding: 0px 8vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer .resources {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .resources img {
+  max-height: 50px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.footer .resources li:hover {
+  color: #26baa4;
+}
+
+.footer .resources ul li:nth-of-type(1) {
+  margin-bottom: 12px;
+}
+
+.footer .socials {
+  width: 100px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer .socials a:nth-child(1) i:hover {
+  color: #3b5998;
+}
+
+.footer .socials a:nth-child(2) i:hover {
+  color: #00acee;
+}
+
+.footer .socials a:nth-child(3) i:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.footer .socials a i {
+  font-size: 20px;
+}
+
+.btn {
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  height: 40px;
+  padding: 0 20px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+.btn-ios {
+  background-color: #26baa4;
+  border-bottom: 2px solid #29a391;
+  -webkit-box-shadow: 0px 7px 10px rgba(41, 163, 145, 0.3);
+          box-shadow: 0px 7px 10px rgba(41, 163, 145, 0.3);
+  margin-right: 6px;
+}
+
+.btn-mac {
+  background-color: #6173ff;
+  border-bottom: 2px solid #5567ec;
+  -webkit-box-shadow: 0px 7px 10px rgba(87, 98, 183, 0.4);
+          box-shadow: 0px 7px 10px rgba(87, 98, 183, 0.4);
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:active {
+  -webkit-transform: scale(0.985);
+          transform: scale(0.985);
+}
+/*# sourceMappingURL=main.css.map */
