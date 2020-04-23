@@ -1,10 +1,16 @@
 @mixin center-center() {
-    width: 60%;
+    max-width: 650px;
     text-align: center;
     margin: 0 auto;
+    @media screen and (max-width: 767px) {
+         max-width: 100% 
+    }
 }
 
 @mixin space() {
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 767px) { 
+        flex-direction: column 
+    }
 }
