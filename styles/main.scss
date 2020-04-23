@@ -6,10 +6,17 @@ body {
     max-width: 1900px;
     margin: 0 auto;
     overflow-x: hidden;
+    & > * {
+        padding: 0 8vw;
+        :focus { outline: 0; }
+        @media screen and (max-width: 767px) {
+            padding: 0 4.5vw; 
+        }  
+    }   
 }
 
 .header {
-    padding: 60px 8vw 0;
+    padding-top: 60px;
     &::after {
         content: '';
         position: absolute;
@@ -22,53 +29,93 @@ body {
     &__content {
         @include center-center;
     }
+    @media screen and (max-width: 767px) {
+        .logo { max-width: 50%; }
+    }
 }
 
 .snippets {
-    padding: 100px 8vw 0;
+    padding-top: 100px;
     &__main {
         @include center-center;
         padding-bottom: 65px;
+        @media screen and (max-width: 767px) { 
+            padding-bottom: 40px 
+        }
     }
     &__hero {
         @include space;
-        img { margin-left: -20%; }    
-    }
-    .feature__container {
-        width: 40%;
-        margin: auto 0;
-        p {
-            position: relative;
-            top: -10px;
+        height: min-content;
+        img {
+            max-width: 70%;
+            margin: auto 5% auto -15%;
+            @media screen and (max-width: 767px) { 
+                margin: auto;
+                padding-bottom: 50px;
+                max-width: 90%;
+            }
+        }    
+
+        .feature__container {
+            margin: auto 0;
+            p {
+                position: relative;
+                top: -10px;    // Thought the space beneath the h4 was a little too much so moved p up 10px
+            }
+            @media screen and (max-width: 767px) {
+                text-align: center; 
+            }
         }
     }
 }
 
 .access {
-    padding: 100px 8vw 0;
-    @include center-center;
-    &__main {
-        padding-bottom: 30px;
+    padding-top: 100px;
+    &__main { 
+        @include center-center;
+        padding-bottom: 30px; 
+    }
+    img { 
+        display: block; 
+        margin: 0 auto; 
+        max-width: 100%;
     }
 }
 
 .supercharge {
     text-align: center;
-    padding: 50px 8vw 0;
+    padding-top: 50px;
     &__tools {
         @include space;
         padding-top: 70px;
         .tool {
             width: calc(95% / 3);
             img { height: 35px; }
+            @media screen and (max-width: 767px) {
+                width: 100%; 
+            }
         }
     }
 }
 
 .partner__companies {
-    @include space;
-    padding: 110px 8vw;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 3%;
+    padding-top: 110px; padding-bottom: 110px;
+    img { 
+       margin: auto;
+       max-width: 87%;  // Making images a bit smaller
+    }
+    @media screen and (max-width: 767px) { 
+        @include space;
+        flex-direction: column;
+        img { 
+            max-width: 100%; 
+            margin-bottom: 60px;
+            &:last-of-type { margin-bottom: 0 }
+        }
+    }
 }
 
 .cta {
@@ -78,23 +125,30 @@ body {
 
 .footer {
     background-color: hsla(201, 11%, 66%, 0.2);
-    padding: 0px 8vw;
     @include space;
 
     .resources {
-        display: flex;
+        @include space;
         img { 
             max-height: 50px;
             align-self: center;
         }
-        li:hover { color: $cyan; }
-
-        ul li:nth-of-type(1) { margin-bottom: 12px; }
+        ul li {
+            &:hover { color: $cyan; }
+            &:nth-of-type(1) { margin-bottom: 12px; }
+        }
+        @media screen and (max-width: 767px) { 
+            & ul { 
+                padding: 0; 
+                margin-bottom: -3px;
+            }
+        }
     }
 
     .socials {
-        width: 100px;
+        width: 140px;
         align-self: center;
+        align-items: center;
         @include space;
         a {
             &:nth-child(1) i:hover { color: #3b5998; }
@@ -103,14 +157,34 @@ body {
                 background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
-                -webkit-background-clip: text;
+                -webkit-background-clip: text; 
             }
-            i { font-size: 20px; }
+            i { 
+                font-size: 20px; 
+                padding: 10px;
+                border: 1px solid transparent;
+                &:hover {
+                    border-color: $cyan;
+                    border-radius: 50%;  
+                    transition: .25s ease;
+                }
+            }
         }
+        @media screen and (max-width: 767px) { 
+            padding-top: 25px; 
+        }
+    }
+
+    @media screen and (max-width: 767px) {  // This MQ is for total footer section
+        @include center-center; 
+        padding-top: 25px; padding-bottom: 25px;
+        .logo {
+            margin-bottom: 25px;
+        } 
     }
 }
 
-
+// Buttons
 .btn {
     border: none;
     border-radius: 50px;
@@ -131,7 +205,13 @@ body {
         border-bottom: 2px solid hsl(233, 80%, 63%);
         box-shadow: 0px 7px 10px hsla(233, 40%, 53%, 0.4);
     }
-    &:hover { opacity: 0.85; }
-    &:focus { outline: 0; }
-    &:active { transform: scale(.985); }
+    &:hover { opacity: 0.85 }
+    &:active { transform: scale(.985) }
+
+    @media screen and (max-width: 767px) { 
+        display: block;
+        margin: 0 auto;
+        width: 100%; max-width: 400px;
+        &-ios { margin-bottom: 15px; }
+    }
 }
