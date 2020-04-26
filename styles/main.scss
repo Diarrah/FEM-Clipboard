@@ -16,7 +16,7 @@ body {
 }
 
 .header {
-    padding-top: 60px;
+    padding-top: 100px;
     &::after {
         content: '';
         position: absolute;
@@ -30,6 +30,7 @@ body {
         @include center-center;
     }
     @media screen and (max-width: 767px) {
+        padding-top: 60px;
         .logo { max-width: 50%; }
     }
 }
@@ -172,6 +173,7 @@ body {
         }
         @media screen and (max-width: 767px) { 
             padding-top: 25px; 
+            flex-direction: row;
         }
     }
 

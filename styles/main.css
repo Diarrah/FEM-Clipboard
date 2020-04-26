@@ -57,7 +57,7 @@ body > * :focus {
 }
 
 .header {
-  padding-top: 60px;
+  padding-top: 100px;
 }
 
 .header::after {
@@ -86,6 +86,9 @@ body > * :focus {
 }
 
 @media screen and (max-width: 767px) {
+  .header {
+    padding-top: 60px;
+  }
   .header .logo {
     max-width: 50%;
   }
@@ -400,6 +403,10 @@ body > * :focus {
 @media screen and (max-width: 767px) {
   .footer .socials {
     padding-top: 25px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
